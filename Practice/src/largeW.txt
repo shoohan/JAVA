@@ -1,0 +1,3 @@
+% java BinarySearch largeW.txt < largeT.txe
+499569
+984875
