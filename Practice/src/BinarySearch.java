@@ -15,17 +15,17 @@ public class BinarySearch {
 		return -1;
 	}
 	
-    public static void main(String[] args) {
-    	int[] whitelist = new  In(args[0]).readAllInts();
-    	Arrays.sort(whitelist);
-    	while(!StdIn.isEmpty())
-    	{
-    		int key = StdIn.readInt();
-    		if (BinarySearch.rank(key, whitelist) < 0 )
-    		{
-    			StdOut.println(key);
-    		}
-    	}
-    }
+//    public static void main(String[] args) {
+//    	int[] whitelist = new  In(args[0]).readAllInts();
+//    	Arrays.sort(whitelist);
+//    	while(!StdIn.isEmpty())
+//    	{
+//    		int key = StdIn.readInt();
+//    		if (BinarySearch.rank(key, whitelist) < 0 )
+//    		{
+//    			StdOut.println(key);
+//    		}
+//    	}
+//    }
 	
 }
