@@ -1,24 +1,20 @@
-import java.util.Arrays;
-import edu.princeton.cs.algs4.Counter;
-//import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.Stopwatch;
+import edu.princeton.cs.algs4.ThreeSum;
 
-public class Practice1 {
+public class Practice1{
+	public static double timeTrial(int N){
+		int MAX = 1000000;
+		int[] a = new int[N];
+		for (int i = 0;i<N;i++) a[i]=StdRandom.uniform(-MAX,MAX);
+		Stopwatch timer = new Stopwatch();
+		int cnt = ThreeSum.count(a);
+		return timer.elapsedTime();
+	}
+	
 	public static void main(String[] args){
-		int T = StdIn.readInt();
-		int T1 = StdIn.readInt();
-		Counter heads = new Counter("heads");
-		Counter tails = new Counter("tails");
-		for (int t = 0; t<T;t++)
-		{
-			if(StdRandom.bernoulli(0.5))
-			{
-				heads.increment();
-			}else tails.increment();
+		for (int N = 250;true;N+=N){
+			double time = timeTrial(N);
+			StdOut.printf("%7d %5.1f\n", N, time);
 		}
-		StdOut.println(heads);
-		StdOut.println(tails);
-		int d = heads.tally()-tails.tally();
-		StdOut.println("delta: "+Math.abs(d));
-		StdOut.println(T1);
 	}
 }
